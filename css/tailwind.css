@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #000000; /* black - Uncompromising strength, premium quality foundation */
+  --color-secondary: #1F2937; /* gray-800 - Sophisticated depth, content separation */
+  --color-accent: #DC2626; /* red-600 - Focused energy, urgent action moments */
+  
+  /* Background Colors */
+  --color-background: #FFFFFF; /* white - Clean canvas, content clarity */
+  --color-surface: #F9FAFB; /* gray-50 - Subtle elevation, card backgrounds */
+  
+  /* Text Colors */
+  --color-text-primary: #111827; /* gray-900 - Extended reading comfort */
+  --color-text-secondary: #6B7280; /* gray-500 - Clear information hierarchy */
+  
+  /* Status Colors */
+  --color-success: #059669; /* emerald-600 - Achievement celebration, positive progress */
+  --color-warning: #D97706; /* amber-600 - Motivational urgency, challenge alerts */
+  --color-error: #DC2626; /* red-600 - Helpful correction, safety emphasis */
+  
+  /* Shadow Variables */
+  --shadow-minimal: 0 1px 3px rgba(0, 0, 0, 0.1);
+  
+  /* Transition Variables */
+  --transition-smooth: 300ms ease-out;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+  }
+  
+  .font-anton-bold {
+    font-family: 'Anton', sans-serif;
+    font-weight: 700;
+  }
+  
+  .font-bebas {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-inter font-semibold px-6 py-3 rounded transition-all duration-300 hover:bg-secondary;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-white font-inter font-bold px-6 py-3 rounded transition-all duration-300 hover:bg-red-700;
+  }
+  
+  .card {
+    @apply bg-surface rounded-lg p-6 shadow-minimal;
+  }
+  
+  .form-input {
+    @apply border border-secondary bg-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-accent transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .shadow-minimal {
+    box-shadow: var(--shadow-minimal);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
